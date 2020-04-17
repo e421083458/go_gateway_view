@@ -198,7 +198,6 @@ export default {
               color: 'rgb(0,136,212)',
               borderColor: 'rgba(0,136,212,0.2)',
               borderWidth: 12
-
             }
           }
         }]

@@ -6,7 +6,9 @@
 
 ### 运行前端代码
 
-- 切换到前端文件夹 `cd project_view`
+- 首先git clone 本项目
+
+`git clone git@github.com:e421083458/gateway_demo_view.git`
 
 - 确保本地环境安装了nodejs
 
@@ -18,6 +20,7 @@ v11.9.0
 - 安装node依赖包
 
 ```
+cd gateway_demo_view
 npm install
 npm install -g cnpm --registry=https://registry.npm.taobao.org
 cnpm install

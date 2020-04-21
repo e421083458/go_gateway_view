@@ -36,22 +36,22 @@ module.exports = {
       warnings: false,
       errors: true
     },
-    // proxy: {
-    //   '/dev-api/': { // 这里最好有一个 /
-    //     target: 'http://127.0.0.1:8081', // 后台接口域名
-    //     ws: true, // 如果要代理 websockets，配置这个参数
-    //     secure: false, // 如果是https接口，需要配置这个参数
-    //     changeOrigin: true, // 是否跨域
-    //     pathRewrite: {
-    //       // 转发举例：
-    //       // http://localhost:9527/dev-api/vue-element-admin/user/login
-    //       // ===>
-    //       // http://45.105.124.130:8081/user/login
-    //       '^/dev-api/': ''
-    //     }
-    //   }
-    // },
-    before: require('./mock/mock-server.js')
+    proxy: {
+      '/dev-api/': { // 这里最好有一个 /
+        target: 'http://127.0.0.1:8081', // 后台接口域名
+        ws: true, // 如果要代理 websockets，配置这个参数
+        secure: false, // 如果是https接口，需要配置这个参数
+        changeOrigin: true, // 是否跨域
+        pathRewrite: {
+          // 转发举例：
+          // http://localhost:9527/dev-api/vue-element-admin/user/login
+          // ===>
+          // http://45.105.124.130:8081/user/login
+          '^/dev-api/': ''
+        }
+      }
+    }
+    // before: require('./mock/mock-server.js')
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that

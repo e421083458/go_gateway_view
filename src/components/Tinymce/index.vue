@@ -80,6 +80,7 @@ export default {
     }
   },
   watch: {
+    // this.value
     value(val) {
       if (!this.hasChange && this.hasInit) {
         this.$nextTick(() =>

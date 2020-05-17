@@ -8,46 +8,6 @@ export function serviceList(query) {
   })
 }
 
-export function serviceDetail(query) {
-  return request({
-    url: '/service/service_detail',
-    method: 'get',
-    params: query
-  })
-}
-
-export function serviceStat(query) {
-  return request({
-    url: '/service/service_stat',
-    method: 'get',
-    params: query
-  })
-}
-
-export function serviceLb(query) {
-  return request({
-    url: '/service/service_lb',
-    method: 'get',
-    params: query
-  })
-}
-
-export function serviceEndPointOpen(data) {
-  return request({
-    url: '/service/service_endpoint_open',
-    method: 'post',
-    data
-  })
-}
-
-export function serviceEndPointClose(data) {
-  return request({
-    url: '/service/service_endpoint_close',
-    method: 'post',
-    data
-  })
-}
-
 export function serviceDelete(query) {
   return request({
     url: '/service/service_delete',
@@ -69,6 +29,22 @@ export function serviceUpdateHttp(data) {
     url: '/service/service_update_http',
     method: 'post',
     data
+  })
+}
+
+export function serviceDetail(query) {
+  return request({
+    url: '/service/service_detail',
+    method: 'get',
+    params: query
+  })
+}
+
+export function serviceStat(query) {
+  return request({
+    url: '/service/service_stat',
+    method: 'get',
+    params: query
   })
 }
 

@@ -32,7 +32,6 @@ if (process.env.NODE_ENV === 'production') {
   mockXHR()
 }
 
-// 使用饿了么组件
 Vue.use(Element, {
   size: Cookies.get('size') || 'medium' // set element-ui default size
 })

@@ -8,18 +8,17 @@
             <span v-if="is_edit === true">修改租户</span>
           </div>
           <div>
-            <el-form-item label="app_id">
+            <el-form-item label="app_id" class="is-required">
               <el-input v-model="form.app_id" :disabled="is_edit===true" placeholder="6-128位字母数字下划线" />
             </el-form-item>
-            <el-form-item label="租户名称">
+            <el-form-item label="租户名称" class="is-required">
               <el-input v-model="form.name" placeholder="最多255字符，必填" />
             </el-form-item>
             <el-form-item label="32位密钥">
               <el-input v-model="form.secret" placeholder="32位字符串，非必填，自动生成" />
             </el-form-item>
 
-            <el-form-item label="QPS限流">
-              <el-input v-model="form.qps" placeholder="0表示无限制" />
+            <el-form-item label="QPS限流"><el-input v-model="form.qps" placeholder="0表示无限制" />
             </el-form-item>
 
             <el-form-item label="日请求量限流">
@@ -127,7 +126,7 @@ export default {
 .el-select .el-input {
     width: 130px;
   }
-  .input-with-select .el-input-group__prepend {
-    background-color: #fff;
-  }
+.input-with-select .el-input-group__prepend {
+  background-color: #fff;
+}
 </style>

@@ -6,7 +6,7 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
-const name = defaultSettings.title || '微服务网关' // page title
+const name = defaultSettings.title || 'vue Element Admin' // page title
 
 // If your port is set to 80,
 // use administrator privileges to execute the command line.
@@ -24,7 +24,7 @@ module.exports = {
    * In most cases please use '/' !!!
    * Detail: https://cli.vuejs.org/config/#publicpath
    */
-  publicPath: '/',
+  publicPath: '/dist',
   outputDir: 'dist',
   assetsDir: 'static',
   lintOnSave: process.env.NODE_ENV === 'development',
@@ -37,17 +37,11 @@ module.exports = {
       errors: true
     },
     proxy: {
-      '/dev-api/': { // 这里最好有一个 /
-        target: 'http://127.0.0.1:8081', // 后台接口域名
-        ws: true, // 如果要代理 websockets，配置这个参数
-        secure: false, // 如果是https接口，需要配置这个参数
-        changeOrigin: true, // 是否跨域
+      [process.env.VUE_APP_BASE_API]: {
+        target: `http://127.0.0.1:8880`,
+        changeOrigin: true,
         pathRewrite: {
-          // 转发举例：
-          // http://localhost:9527/dev-api/vue-element-admin/user/login
-          // ===>
-          // http://45.105.124.130:8081/user/login
-          '^/dev-api/': ''
+          ['^' + process.env.VUE_APP_BASE_API]: ''
         }
       }
     }
@@ -94,12 +88,6 @@ module.exports = {
         return options
       })
       .end()
-
-    config
-      // https://webpack.js.org/configuration/devtool/#development
-      .when(process.env.NODE_ENV === 'development',
-        config => config.devtool('cheap-source-map')
-      )
 
     config
       .when(process.env.NODE_ENV !== 'development',

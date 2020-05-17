@@ -8,13 +8,13 @@
             <span v-if="is_edit === true">修改GRPC服务</span>
           </div>
           <div>
-            <el-form-item label="服务名称">
+            <el-form-item label="服务名称" class="is-required">
               <el-input v-model="form.service_name" :disabled="is_edit===true" placeholder="6-128位字母数字下划线" />
             </el-form-item>
-            <el-form-item label="服务描述">
+            <el-form-item label="服务描述" class="is-required">
               <el-input v-model="form.service_desc" placeholder="最多255字符，必填" />
             </el-form-item>
-            <el-form-item label="端口">
+            <el-form-item label="端口" class="is-required">
               <el-input v-model="form.port" :disabled="is_edit===true" placeholder="需要设置8001-8999范围内数字，必填" />
             </el-form-item>
             <el-form-item label="metadata转换">
@@ -50,11 +50,11 @@
               <el-radio v-model="form.round_type" label="3">ip_hash</el-radio>
             </el-form-item>
 
-            <el-form-item label="IP列表">
+            <el-form-item label="IP列表" class="is-required">
               <el-input v-model="form.ip_list" placeholder="格式: 127.0.0.1:80 多条换行" type="textarea" :autosize="{ minRows: 2, maxRows: 20}" />
             </el-form-item>
 
-            <el-form-item label="权重列表">
+            <el-form-item label="权重列表" class="is-required">
               <el-input v-model="form.weight_list" placeholder="格式: 50 多条换行" type="textarea" :autosize="{ minRows: 2, maxRows: 20}" />
             </el-form-item>
 

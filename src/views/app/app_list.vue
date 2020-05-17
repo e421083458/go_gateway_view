@@ -114,19 +114,12 @@ import {
   appDelete
 } from '@/api/app'
 import waves from '@/directive/waves' // waves directive
-import dateFormat from '@/utils/date'
 import Pagination from '@/components/Pagination' // secondary package based on el-pagination
 
 export default {
   name: 'AppList',
   components: { Pagination },
   directives: { waves },
-  filters: {
-    formatdate: function(time) {
-      const date = new Date(time)
-      return dateFormat.formatDate(date, 'yyyy.MM.dd')
-    }
-  },
   data() {
     return {
       tableKey: 'qq',

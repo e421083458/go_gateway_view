@@ -1,11 +1,11 @@
 module.exports = {
-  title: '微服务网关',
+  title: 'Go微服务网关',
 
   /**
    * @type {boolean} true | false
    * @description Whether show the settings right-panel
    */
-  showSettings: false,
+  showSettings: true,
 
   /**
    * @type {boolean} true | false

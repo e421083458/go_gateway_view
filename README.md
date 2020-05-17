@@ -1,217 +1,223 @@
-<p align="center">
-  <img width="320" src="https://wpimg.wallstcn.com/ecc53a42-d79b-42e2-8852-5126b810a4c8.svg">
-</p>
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-<p align="center">
-  <a href="https://github.com/vuejs/vue">
-    <img src="https://img.shields.io/badge/vue-2.6.10-brightgreen.svg" alt="vue">
-  </a>
-  <a href="https://github.com/ElemeFE/element">
-    <img src="https://img.shields.io/badge/element--ui-2.7.0-brightgreen.svg" alt="element-ui">
-  </a>
-  <a href="https://travis-ci.org/PanJiaChen/vue-element-admin" rel="nofollow">
-    <img src="https://travis-ci.org/PanJiaChen/vue-element-admin.svg?branch=master" alt="Build Status">
-  </a>
-  <a href="https://github.com/PanJiaChen/vue-element-admin/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license">
-  </a>
-  <a href="https://github.com/PanJiaChen/vue-element-admin/releases">
-    <img src="https://img.shields.io/github/release/PanJiaChen/vue-element-admin.svg" alt="GitHub release">
-  </a>
-  <a href="https://gitter.im/vue-element-admin/discuss">
-    <img src="https://badges.gitter.im/Join%20Chat.svg" alt="gitter">
-  </a>
-  <a href="https://panjiachen.github.io/vue-element-admin-site/donate">
-    <img src="https://img.shields.io/badge/%24-donate-ff69b4.svg" alt="donate">
-  </a>
-</p>
+- [功能点对应源码](#%E5%8A%9F%E8%83%BD%E7%82%B9%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81)
+- [Go 微服务网关代码使用说明](#go-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3%E4%BB%A3%E7%A0%81%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
+  - [代码帮助](#%E4%BB%A3%E7%A0%81%E5%B8%AE%E5%8A%A9)
+    - [运行后端代码](#%E8%BF%90%E8%A1%8C%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81)
+    - [运行后端项目](#%E8%BF%90%E8%A1%8C%E5%90%8E%E7%AB%AF%E9%A1%B9%E7%9B%AE)
+    - [运行前端项目](#%E8%BF%90%E8%A1%8C%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE)
+    - [后端goland编辑器参考](#%E5%90%8E%E7%AB%AFgoland%E7%BC%96%E8%BE%91%E5%99%A8%E5%8F%82%E8%80%83)
+    - [vscode编辑器设置参考](#vscode%E7%BC%96%E8%BE%91%E5%99%A8%E8%AE%BE%E7%BD%AE%E5%8F%82%E8%80%83)
+  - [后端环境搭建及编辑器使用 参考文档](#%E5%90%8E%E7%AB%AF%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%8F%8A%E7%BC%96%E8%BE%91%E5%99%A8%E4%BD%BF%E7%94%A8-%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3)
+  - [前端环境搭建及编辑器使用参考文档](#%E5%89%8D%E7%AB%AF%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%8F%8A%E7%BC%96%E8%BE%91%E5%99%A8%E4%BD%BF%E7%94%A8%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3)
 
-English | [简体中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [Spanish](./README.es.md)
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Introduction
+# 功能点对应源码
 
-[vue-element-admin](https://panjiachen.github.io/vue-element-admin) is a production-ready front-end solution for admin interfaces. It is based on [vue](https://github.com/vuejs/vue) and uses the UI Toolkit [element-ui](https://github.com/ElemeFE/element).
+功能点| 源码地址
+---|---
+熔断器| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/circuit_breaker)
+单机流量统计| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/flow_count)
+分布式流量统计| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/redis_flow_count)
+grpc反向代理| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/grpc_reverse_proxy)
+grpc反向代理整合中间件| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/grpc_reverse_proxy_advance)
+grpc反向代理整合负载均衡器| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/grpc_reverse_proxy_lb)
+grpc测试服务器、客户端、grpc-gateway| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/grpc_server_client)
+负载均衡器支持四种负载策略 | [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/load_balance)
+负载均衡之主动探测 | [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/load_balance_client_discovery)
+负载均衡之服务发现 | [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/load_balance_server_discovery)
+中间件实现| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/middleware)
+观察者模式| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/observer)
+限流器| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/rate_limiter)
+测试下游服务器| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/real_server)
+测试下游服务器+服务注册| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/real_server_register)
+浏览器正向代理| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/forward_proxy)
+http反向代理实现| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/reverse_proxy)
+http反向代理简单版| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/reverse_proxy_simple)
+http2反向代理| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/reverse_proxy_http2)
+https反向代理| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/reverse_proxy_https)
+http反向代理基本功能| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/reverse_proxy_base)
+http反向代理权限校验| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/security_check)
+tcp代理服务器实现| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/tcp_proxy)
+thrift服务器与客户端| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/thrift_server_client)
+websocket代理服务器| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/websocket)
+zookeeper基本使用| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/proxy/zookeeper)
+==基础功能==| ===基础功能===
+函数是一等公民| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/base/functional)
+http客户端| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/base/http_client)
+http服务端| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/base/http_server)
+tcp客户端| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/base/tcp_client)
+tcp代理| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/base/tcp_proxy)
+tcp服务器| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/base/tcp_server)
+udp客户端| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/base/udp_client)
+udp服务端| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/base/udp_server)
+tcp自定义协议获取完整报文| [源代码](https://github.com/e421083458/gateway_demo/tree/master/demo/base/unpack)
+其他正在补充... | 其他正在补充...
 
-[vue-element-admin](https://panjiachen.github.io/vue-element-admin) is based on the newest development stack of vue and it has a built-in i18n solution, typical templates for enterprise applications, and lots of awesome features. It helps you build large and complex Single-Page Applications. I believe whatever your needs are, this project will help you.
+# Go 微服务网关代码使用说明
 
-- [Preview](https://panjiachen.github.io/vue-element-admin)
+这是慕课网上的实战课程[《Go 微服务网关》](https://coding.imooc.com/class/436.html)的代码仓。这个代码仓将不仅仅包含课程的所有源代码，还将发布课程的更新相关内容，勘误信息以及计划的更多可以丰富课程的内容，如更多分享，多多练习，等等等等。
 
-- [Documentation](https://panjiachen.github.io/vue-element-admin-site/)
+大家可以下载、运行、测试、修改。如果你发现了任何bug，或者对课程中的任何内容有意见或建议，欢迎和我联系：）
 
-- [Gitter](https://gitter.im/vue-element-admin/discuss)
+第1-8章节功能演示代码：https://github.com/e421083458/gateway_demo
 
-- [Donate](https://panjiachen.github.io/vue-element-admin-site/donate/)
+完整后端项目：https://github.com/e421083458/go_gateway
 
-- [Wiki](https://github.com/PanJiaChen/vue-element-admin/wiki)
+完整前端项目：https://github.com/e421083458/go_gateway_view
 
-- [Gitee](https://panjiachen.gitee.io/vue-element-admin/) 国内用户可访问该地址在线预览
+思维导图：[点击查看](http://naotu.baidu.com/file/0abcf68f3bd03964a63c8c35b44d681d?token=864a35c5e3647e34)
 
-- Base template recommends using: [vue-admin-template](https://github.com/PanJiaChen/vue-admin-template)
-- Desktop: [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
-- Typescript: [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template) (Credits: [@Armour](https://github.com/Armour))
-- [awesome-project](https://github.com/PanJiaChen/vue-element-admin/issues/2312)
+项目的预览地址：http://gateway.itpp.cn:9527/
 
-**After the `v4.1.0+` version, the default master branch will not support i18n. Please use [i18n Branch](https://github.com/PanJiaChen/vue-element-admin/tree/i18n), it will keep up with the master update**
+电子邮箱：niuyufu@didiglobal.com(招php、golang中简历砸过来)
 
-**The current version is `v4.0+` build on `vue-cli`. If you find a problem, please put [issue](https://github.com/PanJiaChen/vue-element-admin/issues/new). If you want to use the old version , you can switch branch to [tag/3.11.0](https://github.com/PanJiaChen/vue-element-admin/tree/tag/3.11.0), it does not rely on `vue-cli`**
+微信公众号：
 
-**This project does not support low version browsers (e.g. IE). Please add polyfill by yourself.**
+![image](http://chuantu.xyz/t6/731/1587960911x3030586988.jpg)
 
-## Preparation
+## 代码帮助
 
-You need to install [node](https://nodejs.org/) and [git](https://git-scm.com/) locally. The project is based on [ES2015+](https://es6.ruanyifeng.com/), [vue](https://cn.vuejs.org/index.html), [vuex](https://vuex.vuejs.org/zh-cn/), [vue-router](https://router.vuejs.org/zh-cn/), [vue-cli](https://github.com/vuejs/vue-cli) , [axios](https://github.com/axios/axios) and [element-ui](https://github.com/ElemeFE/element), all request data is simulated using [Mock.js](https://github.com/nuysoft/Mock).
-Understanding and learning this knowledge in advance will greatly help the use of this project.
+### 运行后端代码
 
- <p align="center">
-  <img width="900" src="https://wpimg.wallstcn.com/a5894c1b-f6af-456e-82df-1151da0839bf.png">
-</p>
+- 首先git clone 本项目
 
-## Sponsors
+`git clone git@github.com:e421083458/gateway_demo.git`
 
-Become a sponsor and get your logo on our README on GitHub with a link to your site. [[Become a sponsor]](https://www.patreon.com/panjiachen)
-
-<a href="https://flatlogic.com/admin-dashboards?from=vue-element-admin"><img width="150px" src="https://wpimg.wallstcn.com/9c0b719b-5551-4c1e-b776-63994632d94a.png" /></a><p>Admin Dashboard Templates made with Vue, React and Angular.</p>
-
-## Features
+- 确保本地环境安装了Go 1.12+版本
 
 ```
-- Login / Logout
-
-- Permission Authentication
-  - Page permission
-  - Directive permission
-  - Permission configuration page
-  - Two-step login
-
-- Multi-environment build
-  - dev sit stage prod
-
-- Global Features
-  - I18n
-  - Multiple dynamic themes
-  - Dynamic sidebar (supports multi-level routing)
-  - Dynamic breadcrumb
-  - Tags-view (Tab page Support right-click operation)
-  - Svg Sprite
-  - Mock data
-  - Screenfull
-  - Responsive Sidebar
-
-- Editor
-  - Rich Text Editor
-  - Markdown Editor
-  - JSON Editor
-
-- Excel
-  - Export Excel
-  - Upload Excel
-  - Visualization Excel
-  - Export zip
-
-- Table
-  - Dynamic Table
-  - Drag And Drop Table
-  - Inline Edit Table
-
-- Error Page
-  - 401
-  - 404
-
-- Components
-  - Avatar Upload
-  - Back To Top
-  - Drag Dialog
-  - Drag Select
-  - Drag Kanban
-  - Drag List
-  - SplitPane
-  - Dropzone
-  - Sticky
-  - CountTo
-
-- Advanced Example
-- Error Log
-- Dashboard
-- Guide Page
-- ECharts
-- Clipboard
-- Markdown to html
+go version
+go version go1.12.15 darwin/amd64
 ```
 
-## Getting started
+- 下载类库依赖
 
-```bash
-# clone the project
-git clone https://github.com/PanJiaChen/vue-element-admin.git
+```
+export GO111MODULE=on && export GOPROXY=https://goproxy.cn
+cd gateway_demo
+go mod tidy
+```
 
-# enter the project directory
-cd vue-element-admin
+- 在相应功能文件夹下，执行 `go run main.go` 即可。
 
-# install dependency
+
+### 运行后端项目
+
+- 首先git clone 本项目
+
+`git clone git@github.com:e421083458/go_gateway.git`
+
+
+- 确保本地环境安装了Go 1.12+版本
+
+```
+go version
+go version go1.12.15 darwin/amd64
+```
+
+- 下载类库依赖
+
+```
+export GO111MODULE=on && export GOPROXY=https://goproxy.cn
+cd go_gateway
+go mod tidy
+```
+
+- 创建 db 并导入数据
+
+```
+mysql -h localhost -u root -p -e "CREATE DATABASE go_gateway DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;"
+mysql -h localhost -u root -p go_gateway < go_gateway.sql --default-character-set=utf8
+```
+
+- 调整 mysql、redis 配置文件
+
+修改 ./conf/dev/mysql.toml 和 ./conf/dev/redis.toml 为自己的环境配置。
+
+- 运行面板、代理服务
+
+运行管理面板配合前端项目 - 达成服务管理功能
+```
+go run main.go -config=./conf/dev/ -endpoint dashboard
+```
+
+运行代理服务
+```
+go run main.go -config=./conf/dev/ -endpoint server
+```
+
+### 运行前端项目
+
+- 首先git clone 本项目
+
+```
+git clone git@github.com:e421083458/go_gateway_view.git
+```
+
+- 确保本地环境安装了nodejs
+
+```
+node -v
+v11.9.0
+```
+
+- 安装node依赖包
+
+```
+cd go_gateway_view
 npm install
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+cnpm install
+```
 
-# develop
+- 运行前端项目
+
+```
 npm run dev
 ```
 
-This will automatically open http://localhost:9527
+### 后端goland编辑器参考
 
-## Build
+- 用 goland 打开项目目录
 
-```bash
-# build for test environment
-npm run build:stage
+- 设置 goland 支持 go mod
+    - Preferences-> Go-> Go Modules（vgo）
+    - 勾选 Enable Go Modules（vgo）
+    - proxy 设置：https://goproxy.cn
 
-# build for production environment
-npm run build:prod
-```
+- 在相应文件夹下的main方法中， 点击 `run go build` 即可。
 
-## Advanced
 
-```bash
-# preview the release environment effect
-npm run preview
+### vscode编辑器设置参考
 
-# preview the release environment effect + static resource analysis
-npm run preview -- --report
+- 用 vscode 打开前端项目目录
 
-# code format check
-npm run lint
+- 安装格式化插件 ESLint、Vetur、vue-beautify
 
-# code format check and auto fix
-npm run lint -- --fix
-```
+## 后端环境搭建及编辑器使用 参考文档
 
-Refer to [Documentation](https://panjiachen.github.io/vue-element-admin-site/guide/essentials/deploy.html) for more information
+go环境安装介绍
+http://docscn.studygolang.com/doc/install
 
-## Changelog
+go 基础语法学习
+http://tour.studygolang.com/welcome/1
 
-Detailed changes for each release are documented in the [release notes](https://github.com/PanJiaChen/vue-element-admin/releases).
+10分钟学会go mod（类库管理器）使用
+https://blog.csdn.net/e421083458/article/details/89762113
 
-## Online Demo
+goland 设置支持go mod
+https://blog.csdn.net/l7l1l0l/article/details/102491573
 
-[Preview](https://panjiachen.github.io/vue-element-admin)
+goland 基本使用介绍
+https://www.cnblogs.com/happy-king/p/9191356.html
 
-## Donate
 
-If you find this project useful, you can buy author a glass of juice :tropical_drink:
+## 前端环境搭建及编辑器使用参考文档
 
-![donate](https://wpimg.wallstcn.com/bd273f0d-83a0-4ef2-92e1-9ac8ed3746b9.png)
+nodejs 安装 https://nodejs.org/zh-cn/download/
 
-[Paypal Me](https://www.paypal.me/panfree23)
-
-[Buy me a coffee](https://www.buymeacoffee.com/Pan)
-
-## Browsers support
-
-Modern browsers and Internet Explorer 10+.
-
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Safari |
-| --------- | --------- | --------- | --------- |
-| IE10, IE11, Edge| last 2 versions| last 2 versions| last 2 versions
-
-## License
-
-[MIT](https://github.com/PanJiaChen/vue-element-admin/blob/master/LICENSE)
-
-Copyright (c) 2017-present PanJiaChen
+效率翻倍的 VS Code 使用指南 https://mp.weixin.qq.com/s/QpbeEgdefw2iaT8qaxkFDA

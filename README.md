@@ -172,23 +172,23 @@ v14.21.3
 
 - 安装依赖包和前端项目
 
-1、执行信息清除
+#### 1、执行信息清除
 ```
 rm -rf node_modules
 npm cache clean --force
 rm -rf package-lock.json
 ```
-2、设置npm加速
+#### 2、设置npm加速
 ```
 npm config set registry https://registry.npm.taobao.org
 ```
 
-3、git添加一个全局属性，防止无法下载等问题
+#### 3、git添加一个全局属性，防止无法下载等问题
 ```
 git config --global url."https://".insteadOf git://
 ```
 
-4、确保本地环境安装了nodejs，这里版本一定要注意，最好是按照v14.21.3版本：
+#### 4、确保本地环境安装了nodejs，这里版本一定要注意，最好是按照v14.21.3版本：
 https://gitcode.net/mirrors/sass/node-sass?utm_source=csdn_github_accelerator
 因为node-sass，要求不低于node10的版本。
 而且最新Mac M1操作系统要求node的最低版本不能低于v14，所以这里最好用v14版本左右。
@@ -201,7 +201,7 @@ brew uninstall node
 然后通过以下地址下载安装即可：
 https://nodejs.org/en/download/releases
 
-5、安装过程可能会依赖本地python2的安装，安装步骤如下：
+#### 5、安装过程可能会依赖本地python2的安装，安装步骤如下：
 https://devpress.csdn.net/python/62f99cf7c6770329307fefe4.html
 ```
 brew install pyenv
@@ -213,17 +213,17 @@ export PYTHON=/Users/yufuniu/.pyenv/versions/2.7.18/bin/python2.7
 export PATH=$PATH:/Users/yufuniu/.pyenv/versions/2.7.18/bin
 ```
 
-6、安装node依赖包
+#### 6、安装node依赖包
 ```
 npm install
 ```
-7、运行前端项目
+#### 7、运行前端项目
 ```
 npm run dev
 
 ```
-前端安装错误信息收集：
-1、需要重新安装python2，并导入环境变量
+### 前端安装错误收集：
+#### 1、需要重新安装python2，并导入环境变量
 ```
 npm ERR! 2 warnings generated.
 npm ERR! env: python: No such file or directory
@@ -241,7 +241,7 @@ npm ERR! gyp ERR! node-gyp -v v3.8.0
 npm ERR! gyp ERR! not ok
 npm ERR! Build failed with error code: 1
 ```
-2、npm来安装依赖项冲突问题如下
+#### 2、npm来安装依赖项冲突问题如下
 ```
 yufuniu@yufunius-MBP go_gateway_view % npm install
 npm ERR! code ERESOLVE
@@ -263,9 +263,9 @@ npm ERR! dev html-webpack-plugin@"3.2.0" from the root project
 npm install webpack@4 --save-dev
 npm install --force
 ```
-3、不清楚执行原理情况下，不要使用yarn进行安装，不然可能引入其他问题。
+#### 3、不清楚执行原理情况下，不要使用yarn进行安装，不然可能引入其他问题。
 
-4、如有其他问题可反复执行1-7步骤，寻找问题原因，或者咨询chat-gpt寻找其他原因。
+#### 4、如有其他问题可反复执行1-7步骤，寻找问题原因，或者咨询chat-gpt寻找其他原因。
 
 ### 后端goland编辑器参考
 
